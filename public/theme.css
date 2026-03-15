@@ -1,0 +1,49 @@
+/**
+ * OpenZirndorf Design Tokens
+ * Standalone CSS-Variablen – können von allen Sub-Apps als CDN-Link eingebunden werden:
+ *   <link rel="stylesheet" href="https://openzirndorf.github.io/openzirndorf-portal/theme.css" />
+ */
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@700;800;900&display=swap");
+
+:root {
+  /* Brand Colors */
+  --oz-green: #009a00;
+  --oz-green-hover: #007a00;
+  --oz-green-dark: #006600;
+  --oz-green-light: #eef7e6;
+  --oz-dark: #1f2937;
+  --oz-red: #ff0000;
+  --oz-orange: #d96020;
+
+  /* Text */
+  --oz-text: #1f2937;
+  --oz-text-muted: #6b7280;
+  --oz-text-inverse: #ffffff;
+
+  /* Backgrounds */
+  --oz-bg: #ffffff;
+  --oz-bg-surface: #f3f4f6;
+  --oz-bg-subtle: #e5e7eb;
+
+  /* Semantic */
+  --oz-success: #15803d;
+  --oz-warning: #b45309;
+  --oz-error: #b91c1c;
+  --oz-info: #1d4ed8;
+
+  /* Typography */
+  --oz-font-heading: "Montserrat", sans-serif;
+  --oz-font-body: "Inter", "Segoe UI", system-ui, sans-serif;
+
+  /* Spacing */
+  --oz-radius: 8px;
+  --oz-radius-lg: 16px;
+  --oz-shadow-sm: 0 1px 3px rgb(0 0 0 / 0.08);
+  --oz-shadow: 0 2px 8px rgb(0 0 0 / 0.1);
+  --oz-shadow-lg: 0 8px 24px rgb(0 0 0 / 0.12);
+
+  /* Layout */
+  --oz-max-width: 1200px;
+  --oz-header-height: 64px;
+}

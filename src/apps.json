@@ -1,0 +1,11 @@
+[
+  {
+    "id": "garagenflohmarkt",
+    "name": "Garagenflohmarkt",
+    "description": "Stand anmelden und alle Stände auf der Karte finden",
+    "icon": "🏷️",
+    "url": "https://openzirndorf.github.io/garagenflohmarkt/",
+    "repo": "openzirndorf/garagenflohmarkt",
+    "active": true
+  }
+]

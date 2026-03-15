@@ -1,0 +1,15 @@
+@import "./theme-vars.css";
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: var(--oz-font-body);
+  background: var(--oz-bg);
+  color: var(--oz-text);
+  line-height: 1.6;
+}
+
+h1, h2, h3 { font-family: var(--oz-font-heading); line-height: 1.2; }
+
+a { color: var(--oz-green); }
+a:hover { color: var(--oz-green-hover); }
