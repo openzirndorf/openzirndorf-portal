@@ -8,7 +8,8 @@
     "repo": "openzirndorf/garagenflohmarkt2.0",
     "active": true,
     "featured": true,
-    "status": "Anmeldung läuft"
+    "status": "Anmeldung läuft",
+    "wip": true
   },
   {
     "id": "ideenboerse",

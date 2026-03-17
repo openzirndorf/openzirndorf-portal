@@ -117,6 +117,7 @@ function Footer() {
           <div style={colStyle}>
             <strong style={{ fontSize: "0.875rem" }}>Rechtliches</strong>
             <a href="#impressum" style={linkStyle}>Impressum</a>
+            <a href="https://openzirndorf.de/datenschutz.html" target="_blank" rel="noopener noreferrer" style={linkStyle}>Datenschutz</a>
           </div>
         </div>
       </div>

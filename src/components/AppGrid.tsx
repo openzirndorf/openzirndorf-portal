@@ -9,6 +9,7 @@ type App = {
   active: boolean;
   featured?: boolean;
   status?: string;
+  wip?: boolean;
 };
 
 function AppCard({ app }: { app: App }) {
@@ -60,6 +61,22 @@ function AppCard({ app }: { app: App }) {
           >
             {app.name}
           </strong>
+          {app.wip && (
+            <span
+              style={{
+                fontSize: "0.7rem",
+                fontWeight: 700,
+                padding: "0.2rem 0.6rem",
+                borderRadius: "999px",
+                background: "var(--oz-warning)",
+                color: "#fff",
+                textTransform: "uppercase",
+                letterSpacing: "0.05em",
+              }}
+            >
+              🚧 In Entwicklung
+            </span>
+          )}
           {app.status && (
             <span
               style={{
