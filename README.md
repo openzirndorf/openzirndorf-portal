@@ -2,7 +2,7 @@
 
 Zentraler Einstiegspunkt für alle digitalen Bürgertools von OpenZirndorf.
 
-Live unter: `https://openzirndorf.github.io/openzirndorf-portal/`
+Live unter: `https://portal.openzirndorf.de/`
 
 ---
 
@@ -101,4 +101,4 @@ Die Tokens beinhalten: Farben (Zirndorf-Grün, Texte, Hintergründe), Schriften
 ## Impressum
 
 Das Impressum ist erreichbar unter:
-`https://openzirndorf.github.io/openzirndorf-portal/#impressum`
+`https://portal.openzirndorf.de/#impressum`

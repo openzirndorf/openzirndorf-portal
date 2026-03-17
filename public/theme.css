@@ -1,7 +1,7 @@
 /**
  * OpenZirndorf Design Tokens
  * Standalone CSS-Variablen – können von allen Sub-Apps als CDN-Link eingebunden werden:
- *   <link rel="stylesheet" href="https://openzirndorf.github.io/openzirndorf-portal/theme.css" />
+ *   <link rel="stylesheet" href="https://portal.openzirndorf.de/theme.css" />
  */
 
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@700;800;900&display=swap");
