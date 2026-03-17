@@ -37,6 +37,16 @@ function Header({ page }: { page: string }) {
         OpenZirndorf
       </a>
       <a
+        href="https://openzirndorf.de"
+        style={{
+          fontSize: "0.875rem",
+          color: "var(--oz-text-muted)",
+          textDecoration: "none",
+        }}
+      >
+        openzirndorf.de ↗
+      </a>
+      <a
         href="#impressum"
         style={{
           fontSize: "0.875rem",

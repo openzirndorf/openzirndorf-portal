@@ -2,10 +2,30 @@
   {
     "id": "garagenflohmarkt",
     "name": "Garagenflohmarkt",
-    "description": "Stand anmelden und alle Stände auf der Karte finden",
+    "description": "Stand anmelden und alle Stände auf der Karte finden – stadtgebietsweit am 26. April 2026",
     "icon": "🏷️",
     "url": "https://openzirndorf.github.io/garagenflohmarkt2.0/",
     "repo": "openzirndorf/garagenflohmarkt2.0",
-    "active": true
+    "active": true,
+    "featured": true,
+    "status": "Anmeldung läuft"
+  },
+  {
+    "id": "ideenboerse",
+    "name": "Ideenbörse",
+    "description": "Ideen für Zirndorf einreichen, diskutieren und gemeinsam weiterentwickeln",
+    "icon": "💡",
+    "url": "https://ideen.openzirndorf.de/",
+    "active": true,
+    "featured": false
+  },
+  {
+    "id": "wahl2026",
+    "name": "Wahlanalyse 2026",
+    "description": "KI-gestützte Analyse zur Kommunalwahl 2026 – alle Ergebnisse öffentlich",
+    "icon": "🗳️",
+    "url": "https://wahl2026.openzirndorf.de/",
+    "active": true,
+    "featured": false
   }
 ]
