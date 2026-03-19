@@ -1,5 +1,16 @@
 [
   {
+    "id": "zirndorf-mobil",
+    "name": "Zirndorf Mobil",
+    "description": "Busse, S4 und RB11 im Zirndorfer Raum – live auf der Karte mit Echtzeit-Verspätungen",
+    "icon": "🚌",
+    "url": "https://mobil.openzirndorf.de/",
+    "active": true,
+    "featured": true,
+    "status": "Beta",
+    "wip": true
+  },
+  {
     "id": "garagenflohmarkt",
     "name": "Garagenflohmarkt",
     "description": "Stand anmelden und alle Stände auf der Karte finden – stadtgebietsweit am 26. April 2026",
@@ -7,7 +18,7 @@
     "url": "https://openzirndorf.github.io/garagenflohmarkt2.0/",
     "repo": "openzirndorf/garagenflohmarkt2.0",
     "active": true,
-    "featured": true,
+    "featured": false,
     "status": "Anmeldung läuft",
     "wip": true
   },
