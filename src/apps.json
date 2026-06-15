@@ -1,5 +1,15 @@
 [
   {
+    "id": "erfahre-zirndorf",
+    "name": "Erfahre Zirndorf",
+    "description": "Zirndorf auf dem Fahrrad entdecken – täglich neue Orte, GPS Check-in und Punkte sammeln. Jetzt aktiv bis 12. Juli 2026.",
+    "icon": "🚴",
+    "url": "https://erfahre.openzirndorf.de/",
+    "active": true,
+    "featured": true,
+    "status": "Live"
+  },
+  {
     "id": "zirndorf-mobil",
     "name": "Zirndorf Mobil",
     "description": "Busse, S4 und RB11 im Zirndorfer Raum – live auf der Karte mit Echtzeit-Verspätungen",
