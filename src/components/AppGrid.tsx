@@ -1,116 +1,64 @@
 import apps from "../apps.json";
 
+type Category = "buerger" | "transparenz" | "erleben";
+
 type App = {
   id: string;
   name: string;
   description: string;
   icon: string;
   url: string;
+  category: Category;
   active: boolean;
   featured?: boolean;
   status?: string;
   wip?: boolean;
 };
 
+const SECTIONS: { id: Category; title: string; desc: string }[] = [
+  {
+    id: "buerger",
+    title: "Bürger-Tools",
+    desc: "Digitale Angebote, die im Alltag helfen.",
+  },
+  {
+    id: "transparenz",
+    title: "Transparenz & Daten",
+    desc: "Offene Auswertungen zu Politik und Verwaltung.",
+  },
+  {
+    id: "erleben",
+    title: "Mitmachen & Erleben",
+    desc: "Aktionen und Kampagnen zum Mitmachen.",
+  },
+];
+
+function Badge({ app }: { app: App }) {
+  if (app.wip) return <span className="oz-badge oz-badge--wip">{app.status ?? "In Arbeit"}</span>;
+  if (app.status === "Live") return <span className="oz-badge oz-badge--live">Live</span>;
+  if (app.status) return <span className="oz-badge oz-badge--neutral">{app.status}</span>;
+  return null;
+}
+
 function AppCard({ app }: { app: App }) {
-  const featured = app.featured ?? false;
   return (
     <a
-      key={app.id}
       href={app.url}
       target="_blank"
       rel="noopener noreferrer"
-      style={{
-        display: "flex",
-        flexDirection: featured ? "row" : "column",
-        alignItems: featured ? "center" : "flex-start",
-        gap: featured ? "1.5rem" : "0.5rem",
-        padding: featured ? "2rem" : "1.5rem",
-        borderRadius: "var(--oz-radius-lg)",
-        border: featured
-          ? "2px solid var(--oz-green)"
-          : "1px solid var(--oz-bg-subtle)",
-        boxShadow: featured ? "var(--oz-shadow)" : "var(--oz-shadow-sm)",
-        textDecoration: "none",
-        color: "inherit",
-        transition: "box-shadow 0.2s, transform 0.2s",
-        background: featured ? "var(--oz-bg-green)" : "var(--oz-bg)",
-        gridColumn: featured ? "1 / -1" : undefined,
-      }}
-      onMouseEnter={(e) => {
-        (e.currentTarget as HTMLAnchorElement).style.boxShadow = "var(--oz-shadow)";
-        (e.currentTarget as HTMLAnchorElement).style.transform = "translateY(-2px)";
-      }}
-      onMouseLeave={(e) => {
-        (e.currentTarget as HTMLAnchorElement).style.boxShadow = featured
-          ? "var(--oz-shadow)"
-          : "var(--oz-shadow-sm)";
-        (e.currentTarget as HTMLAnchorElement).style.transform = "";
-      }}
+      className={`oz-card${app.featured ? " oz-card--featured" : ""}`}
     >
-      <span style={{ fontSize: featured ? "3rem" : "2rem", flexShrink: 0 }}>
+      <span className="oz-card__icon" aria-hidden="true">
         {app.icon}
       </span>
-      <div style={{ flex: 1, minWidth: 0 }}>
-        <div style={{ display: "flex", alignItems: "center", gap: "0.6rem", flexWrap: "wrap", marginBottom: "0.25rem" }}>
-          <strong
-            style={{
-              fontFamily: "var(--oz-font-heading)",
-              fontSize: featured ? "1.4rem" : "1.1rem",
-            }}
-          >
-            {app.name}
-          </strong>
-          {app.wip && (
-            <span
-              style={{
-                fontSize: "0.7rem",
-                fontWeight: 700,
-                padding: "0.2rem 0.6rem",
-                borderRadius: "999px",
-                background: "var(--oz-warning)",
-                color: "#fff",
-                textTransform: "uppercase",
-                letterSpacing: "0.05em",
-              }}
-            >
-              🚧 In Entwicklung
-            </span>
-          )}
-          {app.status && (
-            <span
-              style={{
-                fontSize: "0.7rem",
-                fontWeight: 700,
-                padding: "0.2rem 0.6rem",
-                borderRadius: "999px",
-                background: "var(--oz-green)",
-                color: "#fff",
-                textTransform: "uppercase",
-                letterSpacing: "0.05em",
-              }}
-            >
-              {app.status}
-            </span>
-          )}
+      <div className="oz-card__body">
+        <div className="oz-card__title-row">
+          <strong className="oz-card__title">{app.name}</strong>
+          <Badge app={app} />
         </div>
-        <span
-          style={{
-            fontSize: featured ? "1rem" : "0.875rem",
-            color: "var(--oz-text-muted)",
-          }}
-        >
-          {app.description}
-        </span>
+        <span className="oz-card__desc">{app.description}</span>
       </div>
-      <span
-        style={{
-          fontSize: "1.2rem",
-          color: "var(--oz-text-muted)",
-          flexShrink: 0,
-          marginLeft: "auto",
-        }}
-      >
+      <span className="oz-card__arrow" aria-hidden="true">
         →
       </span>
     </a>
@@ -118,19 +66,44 @@ function AppCard({ app }: { app: App }) {
 }
 
 export function AppGrid() {
-  const active = apps.filter((a) => a.active) as App[];
+  const active = (apps as App[]).filter((a) => a.active);
+
   return (
-    <div
-      style={{
-        display: "grid",
-        gridTemplateColumns: "repeat(auto-fill, minmax(260px, 1fr))",
-        gap: "1.5rem",
-        marginTop: "2rem",
-      }}
-    >
-      {active.map((app) => (
-        <AppCard key={app.id} app={app} />
-      ))}
-    </div>
+    <>
+      {SECTIONS.map((section) => {
+        const inSection = active.filter((a) => a.category === section.id);
+        if (inSection.length === 0) return null;
+        return (
+          <section
+            className="oz-section"
+            key={section.id}
+            aria-labelledby={`section-${section.id}`}
+          >
+            <div className="oz-section__header">
+              <h2 className="oz-section__title" id={`section-${section.id}`}>
+                {section.title}
+              </h2>
+              <span className="oz-section__desc">{section.desc}</span>
+            </div>
+            <div className="oz-grid">
+              {inSection.map((app) => (
+                <AppCard key={app.id} app={app} />
+              ))}
+            </div>
+          </section>
+        );
+      })}
+
+      <p className="oz-extras">
+        <span aria-hidden="true">🏊</span>
+        <span>
+          Und dann war da noch{" "}
+          <a href="https://bad.openzirndorf.de/" target="_blank" rel="noopener noreferrer">
+            Bibertbad Digital
+          </a>{" "}
+          – unser Aprilscherz vom 1. April 2026. Keine echte Ankündigung, nur ein bisschen Spaß.
+        </span>
+      </p>
+    </>
   );
 }

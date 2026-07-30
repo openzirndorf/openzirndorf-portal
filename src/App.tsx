@@ -7,131 +7,163 @@ const NAV: Record<string, string> = {
   "#impressum": "impressum",
 };
 
+const LOGO = "https://openzirndorf.de/static/media/logo.png";
+
 function Header({ page }: { page: string }) {
   return (
-    <header
-      style={{
-        height: "var(--oz-header-height)",
-        borderBottom: "1px solid var(--oz-bg-subtle)",
-        display: "flex",
-        alignItems: "center",
-        padding: "0 1.5rem",
-        gap: "1rem",
-        position: "sticky",
-        top: 0,
-        background: "var(--oz-bg)",
-        zIndex: 10,
-      }}
-    >
-      <a
-        href="/"
-        style={{
-          display: "flex",
-          alignItems: "center",
-          gap: "0.5rem",
-          textDecoration: "none",
-          marginRight: "auto",
-        }}
-      >
-        <img
-          src="https://openzirndorf.de/static/media/logo.png"
-          alt=""
-          aria-hidden="true"
-          width={28}
-          height={28}
-          style={{ borderRadius: "6px" }}
-        />
-        <span style={{ fontFamily: "var(--oz-font-heading)", fontWeight: 800, fontSize: "1.1rem" }}>
-          <span style={{ color: "var(--oz-text)" }}>OpenZirndorf</span>{" "}
-          <span style={{ color: "var(--oz-green)" }}>Portal</span>
-        </span>
-      </a>
-      <a
-        href="https://openzirndorf.de"
-        style={{
-          fontSize: "0.875rem",
-          color: "var(--oz-text-muted)",
-          textDecoration: "none",
-        }}
-      >
-        openzirndorf.de ↗
-      </a>
-      <a
-        href="#impressum"
-        style={{
-          fontSize: "0.875rem",
-          color: page === "impressum" ? "var(--oz-text)" : "var(--oz-text-muted)",
-          textDecoration: "none",
-        }}
-      >
-        Impressum
-      </a>
+    <header className="oz-header">
+      <div className="oz-header__inner">
+        <a href="/" className="oz-header__brand">
+          <img src={LOGO} alt="" aria-hidden="true" width={28} height={28} />
+          <span className="oz-header__brand-name">
+            <span>OpenZirndorf</span> <span>Portal</span>
+          </span>
+        </a>
+        <nav className="oz-header__nav">
+          <a
+            className="oz-header__link"
+            href="https://openzirndorf.de"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            openzirndorf.de ↗
+          </a>
+          <a
+            className={`oz-header__link${page === "impressum" ? " oz-header__link--active" : ""}`}
+            href="#impressum"
+          >
+            Impressum
+          </a>
+        </nav>
+      </div>
     </header>
   );
 }
 
-const LOGO = "https://openzirndorf.de/static/media/logo.png";
-
 function Footer() {
-  const linkStyle = { fontSize: "0.875rem", color: "rgba(255,255,255,0.65)", textDecoration: "none" } as const;
-  const colStyle = { display: "flex", flexDirection: "column", gap: "0.4rem" } as const;
   return (
-    <footer style={{ background: "var(--oz-dark, #1f2937)", marginTop: "4rem" }}>
-      <div
-        style={{
-          maxWidth: "var(--oz-max-width)",
-          margin: "0 auto",
-          padding: "2rem 1.5rem",
-          display: "flex",
-          flexWrap: "wrap",
-          gap: "2rem",
-          justifyContent: "space-between",
-        }}
-      >
-        <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
-          <a href="https://openzirndorf.de" style={{ display: "flex", alignItems: "center", gap: "0.5rem", textDecoration: "none" }}>
-            <img src={LOGO} alt="" aria-hidden="true" width={28} height={28} style={{ borderRadius: "6px" }} />
-            <span style={{ fontFamily: "var(--oz-font-heading)", fontWeight: 800 }}>
-              <span style={{ color: "rgba(255,255,255,0.5)" }}>open</span>
-              <span style={{ color: "var(--oz-green)" }}>zirndorf</span>
+    <footer className="oz-footer">
+      <div className="oz-footer__inner">
+        <div className="oz-footer__brand">
+          <a href="https://openzirndorf.de" className="oz-footer__brand-link">
+            <img
+              src={LOGO}
+              alt=""
+              aria-hidden="true"
+              width={28}
+              height={28}
+              style={{ borderRadius: "6px" }}
+            />
+            <span className="oz-footer__brand-name">
+              <span>open</span>
+              <span>zirndorf</span>
             </span>
           </a>
-          <p style={{ fontSize: "0.875rem", color: "rgba(255,255,255,0.45)", margin: 0 }}>
-            Digitale Möglichkeiten für Zirndorf.
+          <p className="oz-footer__claim">
+            Digitale Möglichkeiten für Zirndorf – von Bürger:innen für Bürger:innen.
           </p>
         </div>
 
-        <div style={{ display: "flex", flexWrap: "wrap", gap: "2rem" }}>
-          <div style={colStyle}>
-            <strong style={{ fontSize: "0.875rem", color: "rgba(255,255,255,0.85)" }}>Digitale Angebote</strong>
-            <a href="https://openzirndorf.github.io/garagenflohmarkt2.0/" target="_blank" rel="noopener noreferrer" style={linkStyle}>Garagenflohmarkt</a>
-            <a href="https://wahl2026.openzirndorf.de/" target="_blank" rel="noopener noreferrer" style={linkStyle}>Wahlanalyse 2026</a>
-            <a href="https://ideen.openzirndorf.de/" target="_blank" rel="noopener noreferrer" style={linkStyle}>Ideenbörse</a>
-            <a href="https://openzirndorf.myspreadshop.de/" target="_blank" rel="noopener noreferrer" style={linkStyle}>Shop</a>
+        <div className="oz-footer__cols">
+          <div className="oz-footer__col">
+            <strong className="oz-footer__col-title">Digitale Angebote</strong>
+            <a
+              className="oz-footer__link"
+              href="https://sommerdetektive.openzirndorf.de/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Sommerdetektive
+            </a>
+            <a
+              className="oz-footer__link"
+              href="https://mobil.openzirndorf.de/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Zirndorf Mobil
+            </a>
+            <a
+              className="oz-footer__link"
+              href="https://openzirndorf.github.io/garagenflohmarkt2.0/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Garagenflohmarkt
+            </a>
+            <a
+              className="oz-footer__link"
+              href="https://ideen.openzirndorf.de/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Ideenbörse
+            </a>
           </div>
-          <div style={colStyle}>
-            <strong style={{ fontSize: "0.875rem", color: "rgba(255,255,255,0.85)" }}>Community</strong>
-            <a href="https://join.slack.com/t/openzirndorf/shared_invite/zt-3qt1trev5-UZDu3QpOfFfLKcIQTndZ6Q" target="_blank" rel="noopener noreferrer" style={linkStyle}>Slack</a>
-            <a href="https://github.com/openzirndorf" target="_blank" rel="noopener noreferrer" style={linkStyle}>GitHub</a>
-            <a href="https://instagram.com/openzirndorf" target="_blank" rel="noopener noreferrer" style={linkStyle}>Instagram</a>
+          <div className="oz-footer__col">
+            <strong className="oz-footer__col-title">Transparenz</strong>
+            <a
+              className="oz-footer__link"
+              href="https://wahl2026.openzirndorf.de/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Wahlanalyse 2026
+            </a>
           </div>
-          <div style={colStyle}>
-            <strong style={{ fontSize: "0.875rem", color: "rgba(255,255,255,0.85)" }}>Rechtliches</strong>
-            <a href="#impressum" style={linkStyle}>Impressum</a>
-            <a href="https://openzirndorf.de/datenschutz.html" target="_blank" rel="noopener noreferrer" style={linkStyle}>Datenschutz</a>
+          <div className="oz-footer__col">
+            <strong className="oz-footer__col-title">Community</strong>
+            <a
+              className="oz-footer__link"
+              href="https://join.slack.com/t/openzirndorf/shared_invite/zt-3qt1trev5-UZDu3QpOfFfLKcIQTndZ6Q"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Slack
+            </a>
+            <a
+              className="oz-footer__link"
+              href="https://github.com/openzirndorf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              GitHub
+            </a>
+            <a
+              className="oz-footer__link"
+              href="https://instagram.com/openzirndorf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Instagram
+            </a>
+            <a
+              className="oz-footer__link"
+              href="https://openzirndorf.myspreadshop.de/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Shop
+            </a>
+          </div>
+          <div className="oz-footer__col">
+            <strong className="oz-footer__col-title">Rechtliches</strong>
+            <a className="oz-footer__link" href="#impressum">
+              Impressum
+            </a>
+            <a
+              className="oz-footer__link"
+              href="https://openzirndorf.de/datenschutz.html"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Datenschutz
+            </a>
           </div>
         </div>
       </div>
-      <div
-        style={{
-          borderTop: "1px solid rgba(255,255,255,0.1)",
-          padding: "1rem 1.5rem",
-          textAlign: "center",
-          fontSize: "0.8rem",
-          color: "rgba(255,255,255,0.4)",
-        }}
-      >
-        © {new Date().getFullYear()} OpenZirndorf · Entwickelt mit ❤️ in Zirndorf
+      <div className="oz-footer__bottom">
+        © {new Date().getFullYear()} OpenZirndorf · Gemacht mit ❤️ und ☕ in Zirndorf
       </div>
     </footer>
   );
@@ -149,19 +181,17 @@ export function App() {
   return (
     <>
       <Header page={page} />
-      <main
-        style={{
-          maxWidth: "var(--oz-max-width)",
-          margin: "0 auto",
-          padding: "2rem 1.5rem 4rem",
-        }}
-      >
+      <main className="oz-container" style={{ paddingBottom: "3rem" }}>
         {page === "start" && (
           <>
-            <h1 style={{ fontSize: "2rem", marginBottom: "0.5rem" }}>OpenZirndorf</h1>
-            <p style={{ color: "var(--oz-text-muted)", maxWidth: "520px" }}>
-              Digitale Bürgertools für Zirndorf – offen, kostenlos, von der Community gemacht.
-            </p>
+            <div className="oz-hero">
+              <span className="oz-hero__eyebrow">Bürgerinitiative · offen · kostenlos</span>
+              <h1 className="oz-hero__title">Digitale Bürgertools für Zirndorf</h1>
+              <p className="oz-hero__tagline">
+                Alle Projekte von OpenZirndorf an einem Ort – entwickelt von der Community, für die
+                Stadt. Kostenlos, werbefrei und ohne unnötiges Tracking.
+              </p>
+            </div>
             <AppGrid />
           </>
         )}

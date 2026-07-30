@@ -29,8 +29,11 @@
   /* Semantic */
   --oz-success: #15803d;
   --oz-warning: #b45309;
+  --oz-warning-light: #fef3c7;
   --oz-error: #b91c1c;
   --oz-info: #1d4ed8;
+  --oz-joke: #7c3aed;
+  --oz-joke-light: #f3e8ff;
 
   /* Typography */
   --oz-font-heading: "Montserrat", sans-serif;

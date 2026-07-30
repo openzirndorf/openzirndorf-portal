@@ -1,7 +1,10 @@
 export function Impressum() {
   return (
     <div style={{ maxWidth: "680px" }}>
-      <a href="/" style={{ fontSize: "0.875rem", color: "var(--oz-green)", textDecoration: "none" }}>
+      <a
+        href="/"
+        style={{ fontSize: "0.875rem", color: "var(--oz-green)", textDecoration: "none" }}
+      >
         ← Zurück
       </a>
       <h1 style={{ margin: "1rem 0 1.5rem" }}>Impressum</h1>
@@ -24,7 +27,7 @@ export function Impressum() {
       </p>
 
       <p style={{ fontSize: "0.875rem", color: "var(--oz-text-muted)" }}>
-        entwickelt mit ❤️ in Zirndorf
+        Gemacht mit ❤️ und ☕ in Zirndorf
       </p>
     </div>
   );

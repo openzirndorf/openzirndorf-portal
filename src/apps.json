@@ -1,53 +1,68 @@
 [
   {
-    "id": "erfahre-zirndorf",
-    "name": "Erfahre Zirndorf",
-    "description": "Zirndorf auf dem Fahrrad entdecken – täglich neue Orte, GPS Check-in und Punkte sammeln. Jetzt aktiv bis 12. Juli 2026.",
-    "icon": "🚴",
-    "url": "https://erfahre.openzirndorf.de/",
-    "active": true,
-    "featured": true,
-    "status": "Live"
-  },
-  {
     "id": "zirndorf-mobil",
     "name": "Zirndorf Mobil",
-    "description": "Busse, S4 und RB11 im Zirndorfer Raum – live auf der Karte mit Echtzeit-Verspätungen",
+    "description": "Busse, S4 und RB11 im Zirndorfer Raum – live auf der Karte mit Echtzeit-Verspätungen.",
     "icon": "🚌",
     "url": "https://mobil.openzirndorf.de/",
+    "category": "buerger",
     "active": true,
-    "featured": true,
+    "featured": false,
     "status": "Beta",
     "wip": true
   },
   {
     "id": "garagenflohmarkt",
     "name": "Garagenflohmarkt",
-    "description": "Stand anmelden und alle Stände auf der Karte finden – stadtgebietsweit am 26. April 2026",
+    "description": "Stand anmelden und alle Stände auf der Karte finden – das jährliche Stadtteilfest, bei dem Zirndorf zur Flohmarktmeile wird.",
     "icon": "🏷️",
     "url": "https://openzirndorf.github.io/garagenflohmarkt2.0/",
     "repo": "openzirndorf/garagenflohmarkt2.0",
+    "category": "buerger",
     "active": true,
     "featured": false,
-    "status": "BETA - noch in Klärung",
-    "wip": true
+    "status": "Jährlich"
   },
   {
     "id": "ideenboerse",
     "name": "Ideenbörse",
-    "description": "Ideen für Zirndorf einreichen, diskutieren und gemeinsam weiterentwickeln",
+    "description": "Ideen für Zirndorf einreichen, diskutieren und gemeinsam weiterentwickeln.",
     "icon": "💡",
     "url": "https://ideen.openzirndorf.de/",
+    "category": "buerger",
     "active": true,
     "featured": false
   },
   {
+    "id": "erfahre-zirndorf",
+    "name": "Erfahre Zirndorf",
+    "description": "Zirndorf auf dem Fahrrad entdecken – GPS-Check-ins an Stationen, Team-Rangliste, Preise. Stadtradeln-Begleit-App von OpenZirndorf.",
+    "icon": "🚴",
+    "url": "https://erfahre.openzirndorf.de/",
+    "category": "buerger",
+    "active": true,
+    "featured": false,
+    "status": "Kampagne 2026 beendet"
+  },
+  {
     "id": "wahl2026",
     "name": "Wahlanalyse 2026",
-    "description": "KI-gestützte Analyse zur Kommunalwahl 2026 – alle Ergebnisse öffentlich",
+    "description": "KI-gestützte, vergleichende Auswertung der Bürgermeisterkandidaten zur Kommunalwahl – alle Modellantworten transparent nebeneinander.",
     "icon": "🗳️",
     "url": "https://wahl2026.openzirndorf.de/",
+    "category": "transparenz",
     "active": true,
     "featured": false
+  },
+  {
+    "id": "sommerdetektive",
+    "name": "Sommerdetektive",
+    "description": "Stadtrallye für Familien: An geheimen Stationen in Zirndorf knifflige Rätsel lösen, Codewörter sammeln, Detektiv-Urkunde gewinnen.",
+    "icon": "🕵️",
+    "url": "https://sommerdetektive.openzirndorf.de/",
+    "category": "erleben",
+    "active": true,
+    "featured": true,
+    "status": "Sommer 2026"
   }
 ]
