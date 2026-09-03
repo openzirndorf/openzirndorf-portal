@@ -85,14 +85,6 @@ function Footer() {
             </a>
             <a
               className="oz-footer__link"
-              href="https://openzirndorf.github.io/garagenflohmarkt2.0/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Garagenflohmarkt
-            </a>
-            <a
-              className="oz-footer__link"
               href="https://ideen.openzirndorf.de/"
               target="_blank"
               rel="noopener noreferrer"

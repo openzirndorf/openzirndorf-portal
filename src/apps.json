@@ -12,18 +12,6 @@
     "wip": true
   },
   {
-    "id": "garagenflohmarkt",
-    "name": "Garagenflohmarkt",
-    "description": "Stand anmelden und alle Stände auf der Karte finden – das jährliche Stadtteilfest, bei dem Zirndorf zur Flohmarktmeile wird.",
-    "icon": "🏷️",
-    "url": "https://openzirndorf.github.io/garagenflohmarkt2.0/",
-    "repo": "openzirndorf/garagenflohmarkt2.0",
-    "category": "buerger",
-    "active": true,
-    "featured": false,
-    "status": "Jährlich"
-  },
-  {
     "id": "ideenboerse",
     "name": "Ideenbörse",
     "description": "Ideen für Zirndorf einreichen, diskutieren und gemeinsam weiterentwickeln.",
